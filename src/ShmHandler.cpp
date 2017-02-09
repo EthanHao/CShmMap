@@ -53,7 +53,12 @@ int main() {
     }
     
     //wait all 
-    usleep(10000);
+    for(int i=0; i<2; i++){
+        wait();
+    }
+    
+    //close shared memory
+    //shmdestroy(shmid);
     
     return 0;
 }
