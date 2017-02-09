@@ -1,0 +1,23 @@
+
+SET(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++11")
+
+#head file path
+INCLUDE_DIRECTORIES(${PROJECT_SOURCE_DIR}/include)
+#source directory
+AUX_SOURCE_DIRECTORY(${PROJECT_SOURCE_DIR}/src CPP_FILES)
+
+
+#print the direcories
+MESSAGE(STATUS "CPP_FILES: " ${CPP_FILES})
+MESSAGE(STATUS "Binary dir: " ${PROJECT_BINARY_DIR})
+MESSAGE(STATUS "Source dir: " ${PROJECT_SOURCE_DIR})
+
+add_executable (CShmMap ${CPP_FILES} )
+
+
+TARGET_LINK_LIBRARIES( CShmMap
+pthread
+)
+
+
+
